@@ -1,0 +1,24 @@
+[Unit]
+Description=BLE to MQTT Bridge
+After=network.target bluetooth.service
+Wants=network.target bluetooth.service
+
+[Service]
+Type=simple
+User=ble-mqtt
+Group=ble-mqtt
+WorkingDirectory=/opt/ble-mqtt
+ExecStart=/opt/ble-mqtt/venv/bin/python /opt/ble-mqtt/ble_mqtt_bridge.py
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/ble-mqtt
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,46 @@
+{
+  "template_version": 1,
+  "name": "Govee H5075",
+  "manufacturer": "Govee",
+  "model": "H5075",
+  "ble_name_prefix": "gvh5075",
+  "characteristic": "00010203-0405-0607-0809-0a0b0c0d2b10",
+  "fields": [
+    {
+      "key": "temp",
+      "name": "Temperature",
+      "start_byte": 0,
+      "end_byte": 1,
+      "type": "int16_be",
+      "scale": 0.01,
+      "unit": "°C",
+      "device_class": "temperature",
+      "state_class": "measurement",
+      "icon": "mdi:thermometer",
+      "fahrenheit_convert": true
+    },
+    {
+      "key": "humidity",
+      "name": "Humidity",
+      "start_byte": 2,
+      "end_byte": 3,
+      "type": "uint16_be",
+      "scale": 0.01,
+      "unit": "%",
+      "device_class": "humidity",
+      "state_class": "measurement",
+      "icon": "mdi:water-percent"
+    },
+    {
+      "key": "battery",
+      "name": "Battery",
+      "start_byte": 4,
+      "end_byte": 4,
+      "type": "uint8",
+      "unit": "%",
+      "device_class": "battery",
+      "state_class": "measurement",
+      "icon": "mdi:battery"
+    }
+  ]
+}

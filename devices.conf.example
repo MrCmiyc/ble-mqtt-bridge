@@ -1,0 +1,9 @@
+[device:A4:C1:38:CF:8D:75]
+template = temtop_p2
+name = Temtop P2
+location = Living Room
+
+[device:AA:BB:CC:DD:EE:FF]
+template = temtop_p2
+name = Temtop P2
+location = Bedroom

@@ -1,0 +1,47 @@
+services:
+  # ── Bridge + UI (default) ──
+  ble-mqtt:
+    build: .
+    container_name: ble-mqtt-bridge
+    restart: unless-stopped
+    network_mode: host        # needed for BLE on Linux
+    privileged: true          # needed for Bluetooth access
+    environment:
+      - MODE=bridge-ui
+      - MQTT_HOST=${MQTT_HOST:-localhost}
+      - MQTT_PORT=${MQTT_PORT:-1883}
+      - MQTT_USERNAME=${MQTT_USERNAME:-}
+      - MQTT_PASSWORD=${MQTT_PASSWORD:-}
+    volumes:
+      - ble-mqtt-data:/app/captures
+      - ./bridge.conf:/app/bridge.conf
+      - ./devices.conf:/app/devices.conf
+      - ./templates:/app/templates
+    ports:
+      - "5000:5000"           # Web UI
+
+  # ── Decoder Wizard (standalone) ──
+  # Uncomment to run the decoder wizard separately
+  # decoder:
+  #   build: .
+  #   container_name: ble-mqtt-decoder
+  #   restart: unless-stopped
+  #   environment:
+  #     - MODE=decoder
+  #   ports:
+  #     - "5001:5001"
+  #   volumes:
+  #     - ble-mqtt-data:/app/captures
+
+  # ── MQTT Broker (optional — uncomment if you don't have one) ──
+  # mosquitto:
+  #   image: eclipse-mosquitto:2
+  #   container_name: mosquitto
+  #   restart: unless-stopped
+  #   ports:
+  #     - "1883:1883"
+  #   volumes:
+  #     - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+volumes:
+  ble-mqtt-data:

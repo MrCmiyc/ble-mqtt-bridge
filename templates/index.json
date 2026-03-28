@@ -1,0 +1,26 @@
+{
+  "temtop_p2": {
+    "name": "Temtop P2",
+    "manufacturer": "Temtop",
+    "model": "P2",
+    "description": "Air quality monitor (PM1.0, PM2.5, PM10, temp, humidity)",
+    "confirmed": true,
+    "contributor": "project"
+  },
+  "temtop_m10": {
+    "name": "Temtop M10",
+    "manufacturer": "Temtop",
+    "model": "M10",
+    "description": "Formaldehyde + PM2.5 + temp/humidity monitor",
+    "confirmed": true,
+    "contributor": "project"
+  },
+  "govee_h5075": {
+    "name": "Govee H5075",
+    "manufacturer": "Govee",
+    "model": "H5075",
+    "description": "Temperature, humidity, and battery sensor",
+    "confirmed": true,
+    "contributor": "project"
+  }
+}

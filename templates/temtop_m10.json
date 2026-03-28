@@ -1,0 +1,59 @@
+{
+  "template_version": 1,
+  "name": "Temtop M10",
+  "manufacturer": "Temtop",
+  "model": "M10",
+  "ble_name_prefix": "m10",
+  "packet_length": 49,
+  "characteristic": "00010203-0405-0607-0809-0a0b0c0d2b10",
+  "fields": [
+    {
+      "key": "formaldehyde",
+      "name": "Formaldehyde",
+      "start_byte": 18,
+      "end_byte": 19,
+      "type": "uint16_be",
+      "scale": 0.01,
+      "unit": "mg/m³",
+      "state_class": "measurement",
+      "icon": "mdi:chemical-weapon"
+    },
+    {
+      "key": "pm25",
+      "name": "PM2.5",
+      "start_byte": 22,
+      "end_byte": 23,
+      "type": "uint16_be",
+      "scale": 0.1,
+      "unit": "µg/m³",
+      "device_class": "pm25",
+      "state_class": "measurement",
+      "icon": "mdi:air-filter"
+    },
+    {
+      "key": "temp",
+      "name": "Temperature",
+      "start_byte": 26,
+      "end_byte": 27,
+      "type": "int16_be",
+      "scale": 0.1,
+      "unit": "°C",
+      "device_class": "temperature",
+      "state_class": "measurement",
+      "icon": "mdi:thermometer",
+      "fahrenheit_convert": true
+    },
+    {
+      "key": "humidity",
+      "name": "Humidity",
+      "start_byte": 28,
+      "end_byte": 29,
+      "type": "uint16_be",
+      "scale": 0.1,
+      "unit": "%",
+      "device_class": "humidity",
+      "state_class": "measurement",
+      "icon": "mdi:water-percent"
+    }
+  ]
+}

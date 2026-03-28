@@ -1,0 +1,13 @@
+[mqtt]
+host = localhost
+port = 1883
+username =
+password =
+topic_prefix = ble
+discovery = true
+discovery_prefix = homeassistant
+
+[bridge]
+scan_timeout = 10
+reconnect_delay = 5
+log_level = INFO
