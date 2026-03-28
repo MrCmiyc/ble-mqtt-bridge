@@ -137,6 +137,7 @@ sudo ./install.sh install
 - Windows 11 with WSL2
 - `usbipd` to attach Bluetooth adapter to WSL
 - Or use the Web UI on Windows and connect to a remote BLE host
+- Also it is liklely completely broken because AI
 
 ---
 
